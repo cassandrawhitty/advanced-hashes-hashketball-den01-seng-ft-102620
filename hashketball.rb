@@ -187,9 +187,9 @@ def big_shoe_rebounds
       if player[:shoe] > biggest_shoes 
         biggest_shoes = player[:shoe] 
       end #end if loop
-      if player[:shoe] == biggest_shoes
-        return player[:rebounds]
-      end
     end #end iteration over players array 
+    if player[:shoe] == biggest_shoes
+      return player[:rebounds]
+    end
   end 
 end 
