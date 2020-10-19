@@ -187,7 +187,7 @@ def big_shoe_rebounds
       if player[:shoe] > biggest_shoes #if the value is larger than the current biggest_shoes value
         biggest_shoes = player[:shoe] #replace the biggest shoe value with that one
       end #end of if loop
-      binding.pry
-    end #end loop for players array (?)
+    end #end loop for players array 
+    binding.pry
   end #end of loop keys[:players]
 end #end of loop for game_hash
