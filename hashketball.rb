@@ -186,10 +186,10 @@ def big_shoe_rebounds
     keys[:players].each do |player| 
       if player[:shoe] > biggest_shoes 
         biggest_shoes = player[:shoe] 
-      end #end if loop
+      end 
       if player[:shoe] == biggest_shoes
         return player[:rebounds]
       end
-    end #end iteration over players array 
+    end  
   end 
 end 
