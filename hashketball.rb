@@ -188,6 +188,6 @@ def big_shoe_rebounds
         biggest_shoes = player[:shoe] 
       end #end if loop
     end #end iteration over players array 
-    
+    binding.pry
   end 
 end 
