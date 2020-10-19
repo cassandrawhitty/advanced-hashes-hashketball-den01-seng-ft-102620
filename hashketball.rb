@@ -1,3 +1,5 @@
+require "pry"
+
 # Write your code below game_hash
 def game_hash
   {
@@ -126,4 +128,70 @@ def game_hash
   }
 end
 
-# Write code here
+def num_points_scored(player_n)
+  game_hash.each do |home_away, keys|
+    keys[:players].each do |player|
+      return player[:points] if player[:player_name] == player_n 
+    end
+  end
+end
+
+def shoe_size(player_n)
+  game_hash.each do |home_away, keys|
+    keys[:players].each do |player|
+      return player[:shoe] if player[:player_name] == player_n
+    end
+  end
+end
+
+def team_colors(team_n)
+  game_hash.each do |home_away, keys|
+    return keys[:colors] if keys[:team_name] == team_n
+  end
+end
+
+def team_names()
+  list_of_team_names = []
+  game_hash.each do |home_away, keys|
+    list_of_team_names.push(keys[:team_name])
+  end
+  return list_of_team_names
+end
+
+def player_numbers(team_n)
+  jersey_numbers = []
+  game_hash.each do |home_away, keys|
+    if keys[:team_name] == team_n
+      keys[:players].each do |player|
+        jersey_numbers.push(player[:number])
+      end
+    end
+  end 
+  return jersey_numbers
+end
+
+def player_stats(player_n)
+  game_hash.each do |home_away, keys|
+    keys[:players].each do |player|
+      if player[:player_name] == player_n
+        return player 
+      end
+    end
+  end
+end
+
+def big_shoe_rebounds
+  game_hash.each do |home_away, keys| # iterates through the game hash
+    keys[:players].each do |player| #iterate through the array of player objects
+      biggest_shoes = 0 #creates the variable to store the biggest shoe value
+      i = 0 #start at 0th index in the array
+      while i < keys[:players].length #iterate through the array of players
+        if player[:shoe] > biggest_shoes #if the value is larger than the current biggest_shoes value
+          biggest_shoes = player[:shoe] #replace the biggest shoe value with that one
+          i += 1 #keep iterating through the array and making comparisons
+        end #end of if loop
+      end #end of while loop for players array
+    end #end loop for players array (?)
+  end #end of loop keys[:players]
+  return biggest_shoes
+end #end of loop for game_hash
